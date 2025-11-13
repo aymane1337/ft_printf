@@ -53,11 +53,11 @@ int	ft_printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 			total += write(1, &format[i], 1);
+		else if (format[++i])
+			total += ft_handle_format(args, format[i]);
 		else
 		{
-			i++;
-			if (format[i])
-				total += ft_handle_format(args, format[i]);
+			va_end(args);
 			return (-1);
 		}
 		i++;
