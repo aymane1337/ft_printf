@@ -44,7 +44,7 @@ int	ft_printf(const char *format, ...)
 	int		i;
 	int		total;
 
-	if (!format)
+	if (!format || write(1, "", 0) == -1)
 		return (-1);
 	va_start(args, format);
 	total = 0;
