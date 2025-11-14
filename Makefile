@@ -17,9 +17,6 @@ ${NAME} : ${OBJS} ft_printf.h
 %.o : %.c ft_printf.h
 	${CC} ${CFLAGS} -c $< -o $@
 
-test: ${NAME} main.c
-	${CC} main.c -L. -lftprintf -o test
-
 clean :
 	rm -rf ${OBJS}
 
